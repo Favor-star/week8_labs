@@ -19,8 +19,8 @@ const page = async ({
           {categoryName}
         </p>
       </div>
-      {data.map((item) => (
-        <ItemCard item={item} />
+      {data.map((item,i) => (
+        <ItemCard item={item} key={i} />
       ))}
       {/* <ItemCard item={data} /> */}
     </section>
