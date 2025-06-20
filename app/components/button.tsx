@@ -9,7 +9,7 @@ const Button: React.FC<ButtonProps> = ({ children, className }) => {
   return (
     <button
       className={cn(
-        "px-8 py-3 uppercase text-sm h-fit w-fit space-x-1 text-center  align-middle flex items-center justify-center",
+        "px-8 py-3 uppercase text-sm h-fit w-fit font-bold space-x-1 text-center  align-middle flex items-center justify-center",
         className
       )}
     >

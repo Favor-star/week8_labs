@@ -21,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} antialiased bg-white flex flex-col justify-center items-center w-screen`}
+        className={`${manrope.className} antialiased bg-white flex flex-col justify-center items-center w-full max-w-screen`}
       >
         <Navbar />
-        <main className="w-full flex items-center flex-col  justify-center max-w-screen-xl">
+        <main className="w-full flex items-center flex-col  justify-center ">
           {children}
         </main>
         <Footer />

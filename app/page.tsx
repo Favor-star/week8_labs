@@ -1,9 +1,56 @@
+import Image from "next/image";
 import Button from "./components/button";
+import Hero from "./components/Hero";
+import ItemCard from "./components/ItemCard";
+import ProductCard from "./components/ProductCard";
+import SpeakerCard from "./components/SpeakerCard";
+import BestGear from "./components/BestGear";
 
 export default function Home() {
   return (
-    <div className="w-full p-4">
+    <section className="w-full ">
       {/* <Button className="text-white bg-action">The button</Button> */}
-    </div>
+      <Hero />
+      <section className="w-full flex flex-col items-center justify-center">
+        <div className="w-full flex flex-col sm:flex-row gap-0 -space-y-10 sm:-space-y-0 sm:gap-4 items-center justify-center py-10 max-w-screen-xl px-4">
+          {Array(3)
+            .fill(null)
+            .map((_, i) => (
+              <ProductCard key={i} />
+            ))}
+        </div>
+        <section className="w-full flex flex-col items-center justify-center px-4">
+          <SpeakerCard />
+        </section>
+        <section className="w-full flex flex-col items-center justify-center my-5 px-4">
+          {/* <ItemCard />
+          <ItemCard imageOnRight={true} /> */}
+          <EarphonesHome />
+        </section>
+        <BestGear />
+      </section>
+    </section>
   );
 }
+
+const EarphonesHome = () => {
+  return (
+    <div className="w-full max-w-screen-xl flex flex-col sm:flex-row  gap-5 ">
+      <div className="flex flex-1 w-full rounded-xl overflow-hidden">
+        <Image
+          src={"/image-earphones-yx1.jpg"}
+          alt="image"
+          height={320}
+          width={320}
+          className="w-full"
+        />
+      </div>
+      <div className="flex-1 w-full flex items-start flex-col gap-5 justify-center ps-5 md:ps-10 py-10 bg-gray rounded-xl">
+        <p className=" uppercase text-3xl">YX1 Earphones</p>
+        <Button className="border border-black text-black bg-inherit">
+          See product
+        </Button>
+      </div>
+    </div>
+  );
+};

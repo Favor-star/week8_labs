@@ -4,7 +4,8 @@
   --color-*: initial;
   --color-action: #d87d4a;
   --color-white: #fff;
-  --color-black: #000;
+  --color-gray: #f1f1f1;
+  --color-black: rgb(25, 25, 25);
   --color-red: #ff0000;
   --breakpoint-xl: 70rem;
 }
