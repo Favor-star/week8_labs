@@ -66,7 +66,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ imageOnRight = false, item }) => {
           balanced depth and precision of studio-quality sound.
         </p>
         <Link href={`/${item.category}/${item.slug}`}>
-          <Button className="text-white bg-action mt-2">See product</Button>
+          <Button variant={"primary"}>See product</Button>
         </Link>
       </div>
     </section>

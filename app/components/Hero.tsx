@@ -38,7 +38,7 @@ const Hero = () => {
             quality made for the passionate music
             <br /> enthusiast.
           </div>
-          <Button className="bg-action text-white">See product</Button>
+          <Button variant={"primary"}>See product</Button>
         </div>
       </div>
     </section>

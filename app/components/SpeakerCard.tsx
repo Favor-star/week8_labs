@@ -23,7 +23,7 @@ const SpeakerCard = () => {
           Upgrade to premium speakers that are phenomenally
           <br /> built to deliver truly remarkable sound.
         </p>
-        <Button className=" bg-black text-white mt-5">See product</Button>
+        <Button variant={"secondary"}>See product</Button>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../components/Input";
 import Image from "next/image";
 import Button from "../components/button";
-const page = () => {
+const Page = () => {
   return (
     <section className="w-full max-w-screen-xl px-4 justify-self-center">
       <p className="w-full py-10 text-black/50 text-lg px-4">Go back</p>
@@ -58,16 +58,14 @@ const page = () => {
             <span className="uppercase text-black/50">Grand total</span>
             <span className="font-bold">$ 1,554</span>
           </p>
-          <Button className="text-white bg-action w-full">
-            Checkout & pay
-          </Button>
+          <Button variant={"primary"}>Checkout & pay</Button>
         </div>
       </section>
     </section>
   );
 };
 
-export default page;
+export default Page;
 
 const CheckoutElement = () => {
   return (

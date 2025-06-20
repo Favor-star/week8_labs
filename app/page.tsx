@@ -47,9 +47,7 @@ const EarphonesHome = () => {
       </div>
       <div className="flex-1 w-full flex items-start flex-col gap-5 justify-center ps-5 md:ps-10 py-10 bg-gray rounded-xl">
         <p className=" uppercase text-3xl">YX1 Earphones</p>
-        <Button className="border border-black text-black bg-inherit">
-          See product
-        </Button>
+        <Button variant={"outline"}>See product</Button>
       </div>
     </div>
   );

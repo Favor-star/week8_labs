@@ -61,7 +61,7 @@ const page = async ({
               </div>
               <Button className="text-black bg-gray mt-2 px-5">+</Button>
             </div>
-            <Button className="text-white bg-action mt-2">Add to cart</Button>
+            <Button variant={"primary"}>Add to cart</Button>
           </div>
         </div>
       </div>
@@ -138,7 +138,7 @@ const YouMayLike = () => {
         {Array(3)
           .fill(null)
           .map((_, i) => (
-            <div className="w-full flex flex-col items-center gap-6">
+            <div className="w-full flex flex-col items-center gap-6" key={i}>
               <Image
                 src={"/image-xx99-mark-one-headphones.jpg"}
                 alt="image"
@@ -149,7 +149,7 @@ const YouMayLike = () => {
               <h3 className="font-bold text-black text-2xl uppercase">
                 ZX9 Speaker
               </h3>
-              <Button className="text-white bg-action">see product</Button>
+              <Button variant={"primary"}>see product</Button>
             </div>
           ))}
       </div>
