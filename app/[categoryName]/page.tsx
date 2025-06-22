@@ -2,12 +2,8 @@ import React from "react";
 import ItemCard from "../components/ItemCard";
 import { productsData } from "../data";
 
-const page = async ({
-  params,
-}: {
-  params: Promise<{ categoryName: string }>;
-}) => {
-  const { categoryName } = await params;
+const page =  ({ params }: { params: { categoryName: string } }) => {
+  const { categoryName } =  params;
   const data = productsData.products.filter(
     (product) => product.category === categoryName
   );
@@ -19,7 +15,7 @@ const page = async ({
           {categoryName}
         </p>
       </div>
-      {data.map((item,i) => (
+      {data.map((item, i) => (
         <ItemCard item={item} key={i} />
       ))}
       {/* <ItemCard item={data} /> */}

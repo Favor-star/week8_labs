@@ -4,12 +4,8 @@ import { cn } from "@/app/utils";
 import Button from "@/app/components/button";
 import { productsData } from "@/app/data";
 import ProductCard from "@/app/components/ProductCard";
-const page = async ({
-  params,
-}: {
-  params: Promise<{ productSlug: string }>;
-}) => {
-  const { productSlug } = await params;
+const page = ({ params }: { params: { productSlug: string } }) => {
+  const { productSlug } = params;
   console.log(productSlug);
   const data = productsData.products.find(
     (product) => product.slug === productSlug
