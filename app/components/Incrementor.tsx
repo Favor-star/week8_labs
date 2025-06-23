@@ -1,11 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 
-const Incrementor = () => {
-  const [quantity, setQuantity] = useState<number>(1);
-  const handleDecrement = () => setQuantity((prev) => Math.max(1, prev - 1));
-  const handleIncrement = () => setQuantity((prev) => prev + 1);
+interface IncrementorProps {
+  quantity: number;
+  handleDecrement: () => void;
+  handleIncrement: () => void;
+}
+const Incrementor: FC<IncrementorProps> = ({
+  quantity,
+  handleDecrement,
+  handleIncrement,
+}) => {
   return (
     <div className="w-fit flex flex-row justify-center gap-0 items-center">
       <button

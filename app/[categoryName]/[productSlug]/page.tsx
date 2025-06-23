@@ -1,64 +1,22 @@
 import React from "react";
 import Image from "next/image";
-import { cn } from "@/app/utils";
-import Button from "@/app/components/button";
 import { productsData } from "@/app/data";
 import ProductCards from "@/app/components/ProductCards";
-import Incrementor from "@/app/components/Incrementor";
 import YouMayLike from "@/app/components/YouMayLike";
+import AddToCartCard from "@/app/components/AddToCartCard";
 
 const page = ({ params }: { params: { productSlug: string } }) => {
   const { productSlug } = params;
-  console.log(productSlug);
   const data = productsData.products.find(
     (product) => product.slug === productSlug
   );
   const featuresText = data?.features
     .split("\n")
     .filter((el) => el.length !== 0);
-  console.log(data);
   return (
     <>
       <div className="w-full max-w-screen-xl text-black py-6 px-4">Go back</div>
-      <div
-        className={cn(
-          "flex max-w-screen-xl flex-col  gap-5 lg:gap-0 items-center justify-center overflow-hidden my-0 px-4",
-          "lg:flex-row"
-        )}
-      >
-        <div
-          className={cn(
-            "w-full flex-1   lg:max-h-[500px] h-full relative overflow-hidden rounded-xl",
-            "me-0 lg:me-28 "
-          )}
-        >
-          <Image
-            src={"/image-xx99-mark-two.jpg"}
-            alt="Image speaker"
-            height={1080}
-            width={1120}
-            //   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className=""
-          />
-        </div>
-        <div className="flex flex-col w-full  gap-5 max-w-[500px] items-center justify-center lg:items-start">
-          <p className="tracking-[.5rem] text-action font-light uppercase">
-            new product
-          </p>
-          <h3 className="text-4xl font-bold uppercase ">
-            XX99 Mark II
-            <br /> Headphones
-          </h3>
-          <p className="w-full text-sm text-black/60 text-center lg:text-start">
-            {data?.description}
-          </p>
-          <p className="font-bold ">$ {data?.price.toLocaleString()}</p>
-          <div className="flex gap-2">
-            <Incrementor />
-            <Button variant={"primary"}>Add to cart</Button>
-          </div>
-        </div>
-      </div>
+      <AddToCartCard data={data} />
       <div className="w-full max-w-screen-xl py-20 flex flex-col md:flex-row px-4 gap-12">
         <div className="w-full md:flex-7/12 ">
           <p className="uppercase font-bold text-3xl">Features</p>

@@ -6,11 +6,13 @@ import { usePathname } from "next/navigation";
 import { cn } from "../utils";
 import CheckoutPopUp from "./CheckoutPopUp";
 import { SyntheticEvent, useState } from "react";
+import { useAppSelector } from "../hooks";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState<boolean>(false);
   const handleClosePopup = () => setOpen(false);
+  const { items } = useAppSelector((state) => state.cart);
   return (
     <>
       <section className="bg-black text-white  w-full flex justify-center items-center relative z-50">
@@ -55,10 +57,15 @@ const Navbar = () => {
             </li>
           </ul>
           <button
-            className="w-fit outline-none rounded-full"
+            className="w-fit outline-none rounded-full relative"
             onClick={() => setOpen(true)}
           >
             <ShoppingCart size={30} strokeWidth={1.5} />
+            {items.length !== 0 && (
+              <div className="absolute -top-3 -right-3 aspect-square w-6 h-6 text-sm flex items-center justify-center bg-action text-white p-1 rounded-full">
+                {items.length}
+              </div>
+            )}
           </button>
         </nav>
       </section>

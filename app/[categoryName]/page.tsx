@@ -1,4 +1,3 @@
-import React from "react";
 import ItemCard from "../components/ItemCard";
 import { productsData } from "../data";
 import ProductCards from "../components/ProductCards";
@@ -25,7 +24,6 @@ const page = ({ params }: { params: { categoryName: string } }) => {
         />
       ))}
       <ProductCards />
-      {/* <ItemCard item={data} /> */}
     </section>
   );
 };
