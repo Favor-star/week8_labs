@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "./button";
+import Link from "next/link";
 
 const SpeakerCard = () => {
   return (
@@ -23,7 +24,9 @@ const SpeakerCard = () => {
           Upgrade to premium speakers that are phenomenally
           <br /> built to deliver truly remarkable sound.
         </p>
-        <Button variant={"secondary"}>See product</Button>
+        <Link href={"/speakers/zx9-speaker"}>
+          <Button variant={"secondary"}>See product</Button>
+        </Link>
       </div>
     </div>
   );
