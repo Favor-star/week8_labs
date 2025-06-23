@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Button from "./button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
     <section className="relative">
-      <div
-        className="max-h-[700px] h-fit aspect-square md:aspect-[1440/730] w-full bg-left relative pb-3 bg-black object-bottom -mt-6 "
-        //   style={{ backgroundImage: "url('/image-hero.jpeg')" }}
-      >
+      <div className="max-h-[700px] h-fit aspect-square md:aspect-[1440/730] w-full bg-left relative pb-3 bg-black object-bottom -mt-6 ">
         <Image
           src={"/image-hero.jpeg"}
           alt="hero image"
@@ -20,7 +18,6 @@ const Hero = () => {
           fill
           className="w-full aspect-square md:hidden object-bottom bg-bottom"
         />
-        <div className=""></div>
       </div>
       <div className="absolute top-1/2 -translate-y-1/2 w-full flex items-center justify-center text-white ">
         <div className="max-w-screen-xl flex flex-col items-center md:items-start gap-8  w-full  px-4">
@@ -38,7 +35,9 @@ const Hero = () => {
             quality made for the passionate music
             <br /> enthusiast.
           </div>
-          <Button variant={"primary"}>See product</Button>
+          <Link href={"/headphones/xx99-mark-two-headphones"}>
+            <Button>See product</Button>
+          </Link>
         </div>
       </div>
     </section>

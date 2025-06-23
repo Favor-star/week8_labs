@@ -6,8 +6,10 @@ import Image from "next/image";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { checkoutSchema, CheckoutSchemaProps } from "../schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAppSelector } from "../hooks";
-
+import { useAppDispatch, useAppSelector } from "../hooks";
+import { useState } from "react";
+import SuccessPopup from "./SuccessPopup";
+import { clearCart } from "../utils/slices/cartSlice";
 const CheckoutForm = () => {
   const {
     register,
@@ -16,15 +18,22 @@ const CheckoutForm = () => {
   } = useForm<CheckoutSchemaProps>({
     resolver: zodResolver(checkoutSchema),
   });
+  const dispatch = useAppDispatch();
+
+  const [successPopupOpen, setsuccessPopupOpen] = useState(false);
   const onSubmit: SubmitHandler<CheckoutSchemaProps> = (data) => {
     console.log(data);
-    console.log(errors);
+    setsuccessPopupOpen(true);
+  };
+  const handleClosePopup = () => {
+    setsuccessPopupOpen(false);
+    dispatch(clearCart());
   };
   const { items, shipping, total } = useAppSelector((state) => state.cart);
   const vatValue = (total + shipping) * 0.2;
   return (
     <form
-      className="w-full flex flex-col gap-5 md:flex-row mb-20"
+      className="w-full flex flex-col gap-5 md:flex-row mb-20 relative"
       onSubmit={handleSubmit(onSubmit)}
     >
       <CheckoutInputFields register={register} errors={errors} />
@@ -62,13 +71,17 @@ const CheckoutForm = () => {
           Checkout & pay
         </Button>
       </div>
+      <SuccessPopup
+        open={successPopupOpen}
+        handleClosePopup={handleClosePopup}
+      />
     </form>
   );
 };
 
 export default CheckoutForm;
 
-const CheckoutElement: FC<{
+export const CheckoutElement: FC<{
   quantity: number;
   price: number;
   name: string;

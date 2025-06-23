@@ -19,13 +19,15 @@ const Navbar = () => {
         <nav className="w-full flex justify-between max-w-screen-xl px-4 py-8 border-b border-b-white/75">
           <div className="inline-flex gap-3">
             <MenuIcon className="md:hidden text-white " size={24} />
-            <Image
-              src={"/logo.svg"}
-              alt="logo"
-              width={143}
-              height={25}
-              className="aspect-[144/25] object-cover max-h-[25px] h-fit max-w-[144px] w-fit"
-            />
+            <Link href={"/"}>
+              <Image
+                src={"/logo.svg"}
+                alt="logo"
+                width={143}
+                height={25}
+                className="aspect-[144/25] object-cover max-h-[25px] h-fit max-w-[144px] w-fit"
+              />
+            </Link>
           </div>
           <ul className="md:flex gap-10 hidden ">
             <li className={cn("navLink", pathname === "/" && "text-action")}>

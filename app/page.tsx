@@ -5,6 +5,7 @@ import ItemCard from "./components/ItemCard";
 import SpeakerCard from "./components/SpeakerCard";
 import BestGear from "./components/BestGear";
 import ProductCards from "./components/ProductCards";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -41,7 +42,9 @@ const EarphonesHome = () => {
       </div>
       <div className="flex-1 w-full flex items-start flex-col gap-5 justify-center ps-5 md:ps-10 py-10 bg-gray rounded-xl">
         <p className=" uppercase text-3xl">YX1 Earphones</p>
-        <Button variant={"outline"}>See product</Button>
+        <Link href={"/earphones/yx1-earphones"}>
+          <Button variant={"outline"}>See product</Button>
+        </Link>
       </div>
     </div>
   );
