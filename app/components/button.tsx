@@ -5,7 +5,7 @@ import { ClassValue } from "clsx";
 import { cva, type VariantProps } from "class-variance-authority";
 // type ButtonProps = PropsWithChildren<{ className: ClassValue }>;
 const buttonVariants = cva(
-  "px-8 py-3 uppercase text-sm h-fit w-fit font-bold space-x-1 text-center  align-middle flex items-center justify-center transition-all",
+  "px-8 py-3 uppercase h-12 text - sm h - fit w - fit font - bold space - x - 1 text - center  align - middle flex items - center justify - center transition - all",
   {
     variants: {
       variant: {

@@ -2,9 +2,9 @@ import Image from "next/image";
 import Button from "./components/button";
 import Hero from "./components/Hero";
 import ItemCard from "./components/ItemCard";
-import ProductCard from "./components/ProductCard";
 import SpeakerCard from "./components/SpeakerCard";
 import BestGear from "./components/BestGear";
+import ProductCards from "./components/ProductCards";
 
 export default function Home() {
   return (
@@ -12,13 +12,7 @@ export default function Home() {
       {/* <Button className="text-white bg-action">The button</Button> */}
       <Hero />
       <section className="w-full flex flex-col items-center justify-center">
-        <div className="w-full flex flex-col sm:flex-row gap-0 -space-y-10 sm:-space-y-0 sm:gap-4 items-center justify-center py-10 max-w-screen-xl px-4">
-          {Array(3)
-            .fill(null)
-            .map((_, i) => (
-              <ProductCard key={i} />
-            ))}
-        </div>
+        <ProductCards />
         <section className="w-full flex flex-col items-center justify-center px-4">
           <SpeakerCard />
         </section>

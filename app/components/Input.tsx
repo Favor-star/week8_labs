@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { cn } from "../utils";
 
 interface InputProps {
@@ -9,7 +9,7 @@ interface InputProps {
   autoComplete?: React.HTMLInputAutoCompleteAttribute;
 }
 
-const Input: React.FC<InputProps> = ({
+const Input: FC<InputProps> = ({
   label,
   placeholder,
   autoComplete,

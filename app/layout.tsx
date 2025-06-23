@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${manrope.className} antialiased bg-white flex flex-col justify-center items-center w-full max-w-screen`}
       >
         <Navbar />
-        <main className="w-full flex items-center flex-col  justify-center ">
+        <main className="w-full flex items-center flex-col  justify-center relative">
           {children}
         </main>
         <Footer />

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { FC } from "react";
 import Input from "./Input";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
@@ -9,7 +9,7 @@ interface CheckoutInputFieldsProps {
   register: UseFormRegister<CheckoutSchemaProps>;
   errors: FieldErrors<CheckoutSchemaProps>;
 }
-const CheckoutInputFields: React.FC<CheckoutInputFieldsProps> = ({
+const CheckoutInputFields: FC<CheckoutInputFieldsProps> = ({
   register,
   errors,
 }) => {
