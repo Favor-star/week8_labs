@@ -2,8 +2,12 @@ import ItemCard from "../components/ItemCard";
 import { productsData } from "../data";
 import ProductCards from "../components/ProductCards";
 
-const page = ({ params }: { params: { categoryName: string } }) => {
-  const { categoryName } = params;
+const page = async ({
+  params,
+}: {
+  params: Promise<{ categoryName: string }>;
+}) => {
+  const { categoryName } = await params;
   const data = productsData.products.filter(
     (product) => product.category === categoryName
   );

@@ -5,8 +5,12 @@ import ProductCards from "@/app/components/ProductCards";
 import YouMayLike from "@/app/components/YouMayLike";
 import AddToCartCard from "@/app/components/AddToCartCard";
 
-const page = ({ params }: { params: { productSlug: string } }) => {
-  const { productSlug } = params;
+const page = async ({
+  params,
+}: {
+  params: Promise<{ productSlug: string }>;
+}) => {
+  const { productSlug } = await params;
   const data = productsData.products.find(
     (product) => product.slug === productSlug
   );
